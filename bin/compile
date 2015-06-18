@@ -90,7 +90,8 @@ https://github.com/paulp/sbt-extras#sample-usage"
 fi
 
 SBT_VERSION="$(get_supported_sbt_version ${BUILD_DIR})"
-SBT_TASKS="compile stage"
+SBT_PROJECT="protobuf-svc"
+SBT_TASKS="${SBT_PROJECT}/compile ${SBT_PROJECT}/stage"
 
 # To enable clean compiles, configure the environment to clean:
 # $ heroku config:set SBT_CLEAN=true
