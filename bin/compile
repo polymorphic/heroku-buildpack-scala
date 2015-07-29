@@ -91,7 +91,8 @@ fi
 
 SBT_VERSION="$(get_supported_sbt_version ${BUILD_DIR})"
 SBT_PROJECT="protobuf-svc"
-SBT_TASKS="${SBT_PROJECT}/compile ${SBT_PROJECT}/stage"
+# sbt multi project?
+if [ -z "$SBT_PROJECT" ]; then SBT_TASKS="compile stage"; else SBT_TASKS="${SBT_PROJECT}/compile ${SBT_PROJECT}/stage"; fi
 
 # To enable clean compiles, configure the environment to clean:
 # $ heroku config:set SBT_CLEAN=true
